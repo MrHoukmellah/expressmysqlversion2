@@ -1,0 +1,38 @@
+.Liststyle{
+
+  float:left; 
+  width:80%; 
+  margin: auto;
+  position:relative;
+
+}
+h2 .price {
+  float: left;
+  position: absolute;
+}
+p .price {
+  float:right;
+  text-align: end;
+  position: absolute;
+
+}
+.list-header{
+  position: relative;
+  width:80%;
+  height:60px;    
+  border-bottom:6px solid #ff7f51;
+  margin:0 auto;
+  
+}
+.list-header-text{
+  position: absolute;
+  width: 80%;
+  right: 10%;
+
+  font-family: 'Courgette', cursive;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 28px;
+}
+h2,h3,p{
+  font-family: 'Open Sans', sans-serif;}

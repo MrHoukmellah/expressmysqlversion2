@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    <ion-title>AdminInterface</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+
+  <ion-segment color="favorite" [(ngModel)]="Admin">
+    <ion-segment-button value="Produits" checked>
+      <ion-label>Produits</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Utilisateurs" checked>
+      <ion-label>Users</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+<div [ngSwitch] = "Admin">
+  <ion-grid *ngSwitchCase="'Produits'">
+    <ion-row class="firstrow">
+      <ion-col class="firstcol" size="2">
+        <p>Action</p>
+      </ion-col>
+      <ion-col class="middlecol" size="6">
+        <p>Titre et catégorie</p>
+      </ion-col>
+      <ion-col class="middlecol" size="2">
+        <p>Prix</p>
+      </ion-col>
+      <ion-col class="lastcol" size="2">
+        <p>détails</p>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="rowslist" *ngFor="let p of products">
+      <ion-col class="firstcol" size="2">
+        <ion-button  color="favorite" size="small" shape="round" (click)="deleteProduct(p.id)">
+          <ion-icon name='trash'></ion-icon>
+        </ion-button>
+        <ion-button color="favorite" (click)="modify(p,'product')"size="small"shape="round">
+          <ion-icon name='create'></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col class="middlecol" size="7">
+        <ion-item>
+          <ion-thumbnail>
+            <img src="{{p.image}}">
+          </ion-thumbnail>
+          <ion-label>
+            <h3>{{p.title}}</h3>
+            <p>{{p.name}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col class="middlecol" size="1">
+        <p>{{p.price}}</p>
+      </ion-col>
+      <ion-col class="lastcol" size="2">
+        <ion-button color="favorite" size="small" href="{{p.url}}">url</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-button color="favorite" (click)="go('product')">Ajouter produits</ion-button>
+
+    <ion-button color="favorite" (click) = "posts3InfinitScroll()">Plus de produit</ion-button>
+  </ion-grid>
+  <ion-list *ngSwitchCase="'Utilisateurs'">
+    <ion-list-header>Gestion d'utilisateurs</ion-list-header>
+    <ion-item *ngFor="let u of user">
+      <ion-label>
+        <p>Login : {{u.name}}</p>
+        <p>Mail : {{u.email}}</p>
+        <p>Password : {{u.password}}</p>
+      </ion-label>
+      <ion-button color="favorite"shape="round" (click)="deleteUser(u.id)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+      <ion-button  color="favorite" shape="round" (click)="modify(u,'user')">
+        <ion-icon name="create" ></ion-icon>
+      </ion-button>
+    </ion-item>
+  <ion-button color="favorite"(click)="go('user')">Ajouter utilisateurs</ion-button>
+
+  </ion-list>
+
+</div>
+</ion-content>
+  <app-footer></app-footer>

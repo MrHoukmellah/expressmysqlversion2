@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    <ion-buttons>
+      <ion-back-button slot="start"></ion-back-button>
+      <ion-title>Produits recherchés</ion-title>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+  
+  <ion-content>
+  
+    <ion-list lines="inset">
+  
+      <ion-list-header>
+        <ion-label>
+          
+        </ion-label>
+      </ion-list-header>
+      
+      
+      <ion-item (click)="go(p)"  *ngFor="let p of products" >
+        <ion-thumbnail slot="start">
+          <ion-img auto-hide="false" src="{{p._source.image_urls}}"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{p._source.title}}</h2>
+            <h3 class="price">{{p._source.category}}</h3>
+            <p class="price" slot="end">{{p._source.price}}</p>
+        </ion-label>
+      </ion-item>
+      
+    </ion-list>
+    <ion-button color="favorite" (click) = "getMoreProducts()">Plus de produit</ion-button>
+  
+  
+    
+  </ion-content>
+  <ion-footer>
+    <app-footer></app-footer>
+  </ion-footer>

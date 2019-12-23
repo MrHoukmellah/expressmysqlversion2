@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    
+    <ion-buttons>
+        <ion-title>{{action}} produit</ion-title>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    <ion-item>
+        <ion-label position="floating">Titre du produit</ion-label>
+        <ion-textarea [(ngModel)]="titre"></ion-textarea>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label>Catégories</ion-label>
+          <ion-select [(ngModel)]="name" multiple="false" cancelText="Nah" okText="Okay!">
+            <ion-select-option value="1">accessoires téléphone</ion-select-option>
+            <ion-select-option value="2">accessoires tablettes</ion-select-option>
+            <ion-select-option value="3">téléphones smartphones</ion-select-option>
+            <ion-select-option value="4">tablettes tactiles</ion-select-option>
+            <ion-select-option value="5">PC portables</ion-select-option>
+            <ion-select-option value="6">Ordinateur de bureau</ion-select-option>
+          </ion-select>
+        </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Description du produit</ion-label>
+        <ion-textarea [(ngModel)]="description"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Prix du produit</ion-label>
+        <ion-input [(ngModel)]="price"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Liens URL des images</ion-label>
+        <ion-textarea [(ngModel)]="image"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Lien URL du vendeur</ion-label>
+        <ion-input [(ngModel)]="url"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)=valid() color="favorite">{{action}} produit</ion-button>
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+
+</ion-footer>
+  

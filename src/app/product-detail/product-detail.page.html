@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    <ion-buttons>
+      <ion-back-button slot="start"></ion-back-button>
+      <ion-title>{{product.title}}</ion-title>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content padding>
+    <div class="container">
+      <h2>{{product.title}}</h2>
+      <ion-img auto-hide="false" src="{{product.image}}"></ion-img>
+      <div class="height">
+      <div class="prix"><p>Prix :{{product.price}} Dhs</p></div>
+    </div>
+      <h1>Description du produit</h1>
+    <div class="description">
+        <div [innerHTML] = "product.description"></div>
+        <p><span *ngIf="product.details!='n/a'" [innerHTML] = "product.details"></span></p>
+        <ion-button color="favorite"href="{{product.product_url}}" >Lien URL</ion-button>
+    </div>
+     
+
+    </div>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="favorite" (click)="wishlist(product.id)">
+          <ion-icon *ngIf="isFavorite" style="color:#f00" name="heart" ></ion-icon>
+          <ion-icon *ngIf="!isFavorite" name="heart"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+  </ion-content>
+  
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>

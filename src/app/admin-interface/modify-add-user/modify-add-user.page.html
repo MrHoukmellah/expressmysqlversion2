@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    
+    <ion-buttons>
+      <ion-title>{{action}} utilisateur</ion-title>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      
+      <ion-item>
+        <ion-label position="floating">Mail</ion-label>
+        <ion-input type="email"[(ngModel)]="email"></ion-input>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input [(ngModel)]="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-label position="floating">Repeat password</ion-label>
+        <ion-input type="password" [(ngModel)]="u.password"></ion-input>
+      </ion-item> -->
+
+    </ion-list>
+    <ion-button *ngIf="!add" color = "favorite" (click)="updatingUser()">{{action}} utilisateur</ion-button>
+    <ion-button *ngIf="add" color = "favorite" (click)="addUser()">{{action}} utilisateur</ion-button>
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>
+  

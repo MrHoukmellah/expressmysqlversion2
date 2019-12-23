@@ -1,0 +1,34 @@
+<ion-tab-bar slot="bottom">
+
+  <ion-tab-button tab="Acceuil" (click)="goLogin('home')">
+    <ion-icon name="home"></ion-icon>
+    <ion-label>Acceuil</ion-label>
+    <ion-badge color="favorite">6</ion-badge>
+  </ion-tab-button>
+
+  <ion-tab-button tab="Catégorie" (click)="goLogin('products')">
+    <ion-icon name="map"></ion-icon>
+    <ion-label>Catégories</ion-label>
+  </ion-tab-button>
+
+  <ion-tab-button  *ngIf="loggedIn" tab="Se déconnecter" (click)="logout()">
+    <ion-icon name="person"></ion-icon>
+    <ion-label>Se déconnecter</ion-label>
+    
+  </ion-tab-button>
+  <ion-tab-button  *ngIf="!loggedIn" tab="Se connecter" (click)="goLogin('login')">
+    <ion-icon name="person"></ion-icon>
+    <ion-label>Se connecter</ion-label>   
+  </ion-tab-button>
+
+  <ion-tab-button  *ngIf="loggedIn" tab="Wishlist" (click)="goLogin('wishlist')">
+      <ion-icon name="Heart"></ion-icon>
+      <ion-label>Wishlist</ion-label>
+      
+    </ion-tab-button>
+  
+  <ion-tab-button *ngIf="admin"tab="administrateur" (click)="goLogin('admin-interface')">
+    <ion-icon name="person" color="favorite"></ion-icon>
+    <ion-label>Administrateur</ion-label>
+  </ion-tab-button>
+</ion-tab-bar>

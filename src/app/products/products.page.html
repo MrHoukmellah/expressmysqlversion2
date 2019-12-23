@@ -1,0 +1,70 @@
+<app-header>
+  </app-header>
+    <ion-content fullscreen>
+      
+
+        <ion-card>
+            <ion-item color="favorite">
+                <ion-icon name="tv" slot="start" color="light" size="large"></ion-icon>
+                <ion-label class="label">Ordinateurs de bureau</ion-label>
+                <ion-button (click)="post(6)" fill="clear" slot="end">
+                  <ion-icon name="arrow-forward" color="light" size="large"></ion-icon>
+                </ion-button>
+              </ion-item>
+            </ion-card>
+
+        <ion-card>
+            <ion-item color="favorite">
+                <ion-icon name="laptop" slot="start" color="light" size="large"></ion-icon>
+                <ion-label class="label">Laptops</ion-label>
+                <ion-button (click)="post(5)" fill="clear"  slot="end">
+                    <ion-icon name="arrow-forward" color="light" size="large"></ion-icon>
+                  </ion-button>
+              </ion-item>
+            </ion-card>
+
+              <ion-card>
+                  <ion-item color="favorite">
+                      <ion-icon name="phone-portrait" slot="start" color="light" size="large"></ion-icon>
+                      <ion-label class="label">Téléphones Portables</ion-label>
+                      <ion-button (click)="post(3)" fill="clear" slot="end">
+                          <ion-icon name="arrow-forward" color="light" size="large"></ion-icon>
+                        </ion-button>
+                    </ion-item>
+                  </ion-card>
+
+              <ion-card>
+                  <ion-item color="favorite">
+                      <ion-icon name="tablet-portrait" slot="start" color="light" size="large"></ion-icon>
+                      <ion-label class="label">Tablettes</ion-label>
+                      <ion-button fill="clear"  (click)="post(4)" slot="end">
+                      <ion-icon name="arrow-forward" color="light" size="large"></ion-icon>
+                      </ion-button>
+                    </ion-item>
+                  </ion-card>
+
+              <ion-card>
+                  <ion-item color="favorite">
+                      <ion-icon name="tablet-portrait" slot="start" color="light" size="large"></ion-icon>
+                      <ion-label class="label">Accessoires de tablette</ion-label>
+                      <ion-button (click)="post(2)" slot="end" fill="clear" >
+                      <ion-icon name="arrow-forward" size="large" color="light"></ion-icon>
+                      </ion-button>
+                    </ion-item>
+                  </ion-card>
+
+              <ion-card>
+                  <ion-item color="favorite">
+                      <ion-icon name="phone-portrait" slot="start" color="light" size="large"></ion-icon>
+                      <ion-label class="label">Accessoires de téléphone</ion-label>
+                      <ion-button (click)="post(1)" fill="clear" slot="end">
+                      <ion-icon name="arrow-forward" color="light" size="large"></ion-icon>
+                      </ion-button>
+                    </ion-item>
+                  </ion-card>
+
+    </ion-content>
+  
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

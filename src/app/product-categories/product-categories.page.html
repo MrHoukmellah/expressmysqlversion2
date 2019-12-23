@@ -1,0 +1,30 @@
+<app-header></app-header>
+  <ion-content>
+  
+  <ion-list lines="inset" >
+
+			<ion-list-header>
+					<div class="list-header"><h2 class="list-header-text">{{data}}</h2></div>
+			</ion-list-header>
+      
+      
+      <ion-item (click)="go(p)" *ngFor="let p of products">
+          <ion-thumbnail slot="start">
+            <ion-img auto-hide="false" src="{{p.image}}"></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{p.title}}</h2>
+              <h3 class="price">{{p.name}}</h3>
+              <p class="price" slot="end">{{p.price}}</p>
+          </ion-label>
+        </ion-item>
+        
+      </ion-list>
+    <ion-button color="favorite" (click) = "posts3InfinitScroll()">Plus de produit</ion-button>
+    
+      
+    </ion-content>
+    <ion-footer>
+      <app-footer></app-footer>
+    </ion-footer>
+ 

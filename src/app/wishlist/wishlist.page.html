@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="favorite">
+    <ion-buttons>
+      <ion-back-button slot="start"></ion-back-button>
+      <ion-title>Favoris</ion-title>
+
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+        <ion-list lines="inset">
+
+          <ion-list-header>
+              <div class="list-header"><h2 class="list-header-text">Favoris</h2></div>
+          </ion-list-header>
+        
+        
+        <ion-item (click)="go(p)"  *ngFor="let p of products" >
+         
+          <ion-label>
+            <h2>{{p.title}}</h2>
+              <h3 class="price">{{p.category}}</h3>
+              <p class="price" slot="end">{{p.price}}</p>
+          </ion-label>
+        </ion-item>
+    
+        
+      </ion-list>
+    
+    
+      
+
+</ion-content>
+<ion-footer>
+  <app-footer></app-footer>
+</ion-footer>

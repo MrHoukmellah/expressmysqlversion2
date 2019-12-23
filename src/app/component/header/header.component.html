@@ -1,0 +1,15 @@
+<ion-header  >
+	<ion-toolbar class="first" color="favorite">
+		<ion-buttons>
+				<ion-back-button slot="start"></ion-back-button>
+				<ion-title *ngIf="!clicks">Comparateur</ion-title>
+			<ion-button *ngIf="!clicks" (click)="Showsearchbar()" slot="start">
+          <div><ion-icon name="search" size="large"></ion-icon></div>
+          
+      </ion-button>
+      <ion-searchbar *ngIf="clicks" showCancelButton="always" (ionCancel)="Showsearchbar()" (search)=onsearch($event)></ion-searchbar>
+		</ion-buttons>
+	</ion-toolbar>
+
+</ion-header>
+
